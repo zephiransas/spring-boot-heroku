@@ -31,6 +31,11 @@ public class DemoApplication {
 	@Autowired
 	DepartmentService service;
 
+	@GetMapping("/")
+	public String root() {
+		return "redirect:/test";
+	}
+
 	@GetMapping("/test")
 	public String index(Model model) {
 //		service.prepare();
