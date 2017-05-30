@@ -5,6 +5,7 @@ import com.example.demo.entity.Employee;
 import com.example.demo.repository.DepartmentRepository;
 import com.example.demo.repository.EmployeeRepository;
 import org.hibernate.Hibernate;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class DepartmentTest {
     EmployeeRepository employeeRepository;
 
     @Test
+    @Ignore
     public void test() throws Exception {
         repository.deleteAll();
         employeeRepository.deleteAll();
@@ -63,17 +65,5 @@ public class DepartmentTest {
         assertThat(dep.getEmployees().size(), is(2));
 
     }
-
-
-    @Test
-    @Transactional
-    public void test2() throws Exception {
-        Department department = repository.findOne(26);
-
-        department.getEmployees()
-                .stream()
-                .forEach(e -> System.out.println(e.getName()));
-    }
-
 
 }

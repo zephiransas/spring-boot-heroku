@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -20,8 +21,8 @@ public class EmployeeTest {
     @Autowired
     EmployeeRepository repository;
 
-
     @Test
+    @Transactional
     public void test() throws Exception {
         repository.deleteAll();
 
@@ -34,13 +35,6 @@ public class EmployeeTest {
 
         List<Employee> employees = repository.findAll();
         Assert.assertThat(employees.size(), Matchers.is(1));
-    }
-
-
-    @Test
-    public void test2() throws Exception {
-        Employee employee = repository.findOne(45);
-        System.out.println(employee.getDepartment().getName());
     }
 
 }
