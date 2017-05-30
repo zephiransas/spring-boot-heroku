@@ -1,0 +1,19 @@
+<html lang="jp"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>test</title>
+</head>
+<body>
+
+    <p>Hello!</p>
+
+    <div th:each="department : ${departments}">
+        <h1 th:text="${department.name}"></h1>
+        <ul>
+            <li th:each="employee : ${department.employees}" th:text="|${department.name}:${employee.name}|"></li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

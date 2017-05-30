@@ -1,0 +1,14 @@
+---
+spring:
+  datasource:
+    url: REPLACE_HERE
+    username: REPLACE_HERE
+    password: REPLACE_HERE
+    driverClassName: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace

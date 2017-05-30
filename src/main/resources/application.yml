@@ -1,0 +1,11 @@
+---
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url:
+    username:
+    password:
+    driverClassName: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: true
